@@ -4,9 +4,10 @@ pixela_endpoint = "https://pixe.la/v1/users"
 
 user_params = {
     "token": "7a6sf5sdfs6df76dys78",
-    "username": "Ashley",
+    "username": "ashley",
     "agreeTermsOfService": "yes",
     "notMinor": "yes"
 
 }
-requests.post()
+response = requests.post(url=pixela_endpoint, json=user_params)
+print(response.text)
