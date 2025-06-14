@@ -1,4 +1,5 @@
 import requests
+from datetime import datetime
 
 USERNAME = "ashl3y"
 TOKEN = "7a6sf5sdfs6df76dys78"
@@ -36,9 +37,13 @@ headers = {
 
 pixel_posting_endpoint = f"{pixela_endpoint}/{USERNAME}/graphs/{GRAPH_ID}"
 
+today = datetime.now()
+
+formatted_date_today = today.strftime("%Y%m%d")
+
 pixel_posting_config = {
-    "date": "20250614",
-    "quantity": "1",
+    "date": formatted_date_today,
+    "quantity": "2",
 
 }
 # Posting a pixel
