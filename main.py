@@ -60,5 +60,9 @@ pixel_posting_update = {
 
 }
 # Updating a pixel
-response = requests.put(url=pixel_updating_endpoint,json=pixel_posting_update,headers=headers)
-print(response.text)
+# response = requests.put(url=pixel_updating_endpoint,json=pixel_posting_update,headers=headers)
+# print(response.text)
+
+# Deleting a pixel
+# response = requests.delete(url=pixel_updating_endpoint,headers=headers)
+# print(response.text)
