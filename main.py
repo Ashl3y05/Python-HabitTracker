@@ -43,9 +43,22 @@ formatted_date_today = today.strftime("%Y%m%d")
 
 pixel_posting_config = {
     "date": formatted_date_today,
-    "quantity": "2",
+    "quantity": "20",
 
 }
 # Posting a pixel
-response = requests.post(url=pixel_posting_endpoint, json=pixel_posting_config, headers=headers)
+# response = requests.post(url=pixel_posting_endpoint, json=pixel_posting_config, headers=headers)
+# print(response.text)
+
+yesterday = datetime(month=6, day=14, year=2025)
+formatted_date_yesterday = yesterday.strftime("%Y%m%d")
+pixel_updating_endpoint = f"{pixela_endpoint}/{USERNAME}/graphs/{GRAPH_ID}/{formatted_date_yesterday}"
+
+pixel_posting_update = {
+    "date": formatted_date_yesterday,
+    "quantity": "10",
+
+}
+# Updating a pixel
+response = requests.put(url=pixel_updating_endpoint,json=pixel_posting_update,headers=headers)
 print(response.text)
